@@ -14,7 +14,7 @@ const team = players;
 console.log(players, team);
 
 // You might think we can just do something like this:
-team[3] = "Lux";
+// team[3] = "Lux";
 
 // however what happens when we update that array?
 
@@ -27,10 +27,15 @@ team[3] = "Lux";
 // So, how do we fix this? We take a copy instead!
 
 // one way
+const team2 = players.slice();
 
 // or create a new array and concat the old one in
+const team3 = [].concat(players);
 
 // or use the new ES6 Spread
+const team4 = [...players];
+team4[4] = "youpi";
+console.log(team4);
 
 // now when we update it, the original one isn't changed
 
